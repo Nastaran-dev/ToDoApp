@@ -1,0 +1,262 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+font-family: nastaran;
+    src: url(../font/Rajdhani-Light.ttf)
+}
+@layer base{
+     body{
+        font-family: nastaran;
+    }
+    .row{
+        @apply w-full flex flex-wrap
+    }
+}
+
+/* ////////////////// */
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+          animation-timeline: view(); 
+}
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.10em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.15em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* ///////////////////////// */
+@keyframes animate-slide-in {
+  from {
+    transform: translateX(-100%); /* شروع کاملاً خارج از صفحه */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* اعمال انیمیشن با Tailwind: باید از یک کلاس کمکی استفاده کنیم */
+.animate-slide-in {
+  	-webkit-animation: animate-slide-in 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: animate-slide-in 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+          animation-timeline: view(); 
+}
+/* ///////////////////////////// */
+@keyframes slideInRightCustom {
+  from {
+    transform: translateX(100%); /* شروع کاملاً خارج از صفحه در سمت راست */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* اعمال انیمیشن با Tailwind: باید از یک کلاس کمکی استفاده کنیم */
+.animate-slide-in-right {
+  animation: slideInRightCustom 1s ease-out forwards;
+  opacity: 0; 
+    animation-timeline: view(); /* ابتدا نامرئی باشد تا انیمیشن اجرا شود */
+}
+
+/* /////////////////////////////////// */
+@keyframes vibrant-color-cycle {
+  0% { color: #FF69B4; } /* صورتی داغ (Hot Pink) */
+  15% { color: #FFD700; } /* طلایی (Gold) */
+  30% { color: #32CD32; } /* سبز لیمو (Lime Green) */
+  45% { color: #1E90FF; } /* آبی روشن (Dodger Blue) */
+  60% { color: #FF4500; } /* نارنجی روشن (Orange Red) */
+  75% { color: #9400D3; } /* بنفش تیره (Dark Violet) */
+  90% { color: #00FFFF; } /* فیروزه‌ای (Aqua) */
+  100% { color: #FF69B4; } /* بازگشت به صورتی داغ */
+}
+
+/* ۲. اعمال کلاس به المان */
+.vibrant-color-changer {
+  /* سیکل ۴ ثانیه‌ای برای پویایی بیشتر */
+  animation: vibrant-color-cycle 4s ease-in-out infinite; 
+  
+  /* تنظیم اولیه متن برای خوانایی بهتر روی رنگ‌های متغیر */
+  color: white; 
+  text-shadow: 1px 1px 2px black;
+}
+/* //////////////////////////////// */
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+           animation-timeline: view();
+}
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+/* //////////////////////////// */
+
+
+
+/* ///////////////////////////////// */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 48% 52% 51% 49% / 30% 30% 70% 70%;
+    background-color: gray;
+  }
+  25% {
+    transform: rotate(90deg);
+    border-radius: 27% 73% 41% 59% / 72% 47% 53% 28%;
+    background-color: white;
+  }
+  50% {
+    transform: rotate(200deg);
+    border-radius: 54% 46% 17% 83% / 84% 13% 87% 16%;
+    background-color:gray;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 80% 20% 60% 40% / 40% 50% 50% 60%;
+    background-color: white;
+  }
+}
+.rotate{
+  animation: rotate 10s linear infinite;
+}
+
+
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill.scale-up-hor-right {
+	-webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+           animation-timeline: view();
+}
+
+@-webkit-ke-mode: both;
+}
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+

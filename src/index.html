@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoApp</title>
+  <link rel="stylesheet" href="css/output.css">
+  <style>
+    .hide{
+      display: none;
+    }
+    .del{
+      text-decoration: line-through;
+      color:#24feee;
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 h-screen-dvh">
+   <div class="flex justify-between w-3/4 mx-auto bg-transparent border border-blue-500 rounded-lg mt-[50px] p-6 2xl:container lg:w-1/2 neon-shadow-magenta  ">
+    <div class=" *:capitalize text-white text-[15px] w-full">
+      <p class="font-extrabold text-[20px]">todo app</p>
+      <p>keep it up!</p>
+      <div class="w-3/4 h-[6px] bg-[#171c48]  rounded-full mt-1 relative ">
+    <p id="progress" class="absolute top-0 left-0 h-full duration-700 ease-in-out rounded-full bg-cyan-500" ></p>
+</div>
+
+    </div>
+    <div  class=" *:rounded-full  *:bg-[#828dff] *:p-4 *:lg:p-6">
+      <div id="progress-text" class="font-extrabold text-[20px] text-[#171c48]">0/0</div>
+    </div>
+   </div>
+   <!-- end top -->
+    <div class="flex justify-center w-full gap-3 px-5 m-8 mx-auto overflow-x-hidden 2xl:container">
+      <input type="text" placeholder="write your Tasks" class="w-3/5 p-1 lg:w-[35%] capitalize bg-[#171c48] border border-blue-500 outline-none rounded-md text-purple-100  placeholder:capitalize text-[15px] placeholder:p-3 placeholder:text-gray-600">
+       <button  class=" *:rounded-full *:text-[#171c48] *:bg-[#828dff]   w-[10%] sm:w-[6%] lg:w-[3%]" onclick="AddToTasK()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-full p-2 text-white cursor-pointer "><path d="M13.0001 10.9999L22.0002 10.9997L22.0002 12.9997L13.0001 12.9999L13.0001 21.9998L11.0001 21.9998L11.0001 12.9999L2.00004 13.0001L2 11.0001L11.0001 10.9999L11 2.00025L13 2.00024L13.0001 10.9999Z"></path></svg>
+    </button>
+       <span id="Clear" class=" bg-[#828dff] text-[#171c48]  p-3 text-[12px] rounded-2xl cursor-pointer flex items-center justify-center">
+        clear all
+    </span>
+    </div>
+    <ul id="do" class="flex flex-col justify-center w-full  gap-4 mx-auto  *:text-white *:flex *:justify-between *:w-3/4 *:p-2 *:mx-auto *:bg-[#171c48] *:rounded-xl *:lg:w-[40%] *:sm:text-[20px] *:text-[13px]">
+    </ul>
+    <!-- //////////////////////////////////////////////////////// -->
+    
+   <div class="absolute bottom-0 z-50 flex justify-end w-full overflow-x-hidden overflow-y-hidden sm:hidden md:flex" >
+  <div class="relative flex w-[180px] h-[180px] items-center justify-end overflow-visible group ">
+
+    <div class="absolute w-[100px] h-[100px] rounded-full bg-black opacity-70 z-0 animate-spin-slow rotate md:w-[140px] md:h-[140px] "></div>
+
+  
+    <img src="img/nacy-removebg-preview.png"
+         alt="Logo"
+         class="h-[80px] z-20 pointer-events-none transition-transform duration-300 group-hover:scale-[1.05] md:h-[120px] object-cover" />
+
+
+    <ul class="absolute z-40 flex items-center justify-end w-full gap-3 transition-all duration-500 scale-90 -translate-x-1/2 opacity-0 pointer-events-none left-1/2 group-hover:translate-y-16 group-hover:opacity-100 group-hover:scale-100 md:mt-6">
+      <li>
+        <a href="https://www.instagram.com/nastaran__dev" target="_blank" class="pointer-events-auto">
+          <img src="img/instagram-fill.svg" class="w-[20px]" alt="Instagram">
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/Nastaran-dev" target="_blank" class="pointer-events-auto">
+          <img src="img/github-fill.svg" class="w-[20px]" alt="GitHub">
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.linkedin.com/in/nastaran-mohammadi-1515a8382" target="_blank" class="pointer-events-auto">
+          <img src="img/linkedin-box-fill.svg" class="w-[20px]" alt="LinkedIn">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
